@@ -10,6 +10,7 @@ import discord from "/public/images/Discord.svg";
 
 import portfolioP from "/public/images/PortfolioProject.png";
 import realEstateP from "/public/images/RealEstateProject.png";
+import bookCampP from "/public/images/BookCamp.jpg";
 
 
 function Socials({ size }) {
@@ -32,7 +33,7 @@ function Socials({ size }) {
 
 function ProjectCard({ image, color }) {
   return (<div className="w-[165px] h-[100px] lg:w-[330px] lg:h-[200px] overflow-clip mt-5 relative">
-    <Image src={image} fill alt="Hailegebriel Bizuayehu" className={`border-solid border-[${color}] border-2 rounded-md`}></Image>
+    <Image src={image} fill alt="Hailegebriel Bizuayehu" className={`border-solid border-[${color}] border-2 rounded-md object-contain`}></Image>
   </div>);
 }
 
@@ -68,11 +69,15 @@ export default function Home() {
 
       <section className="w-full flex flex-col text-left lg:px-10">
         <h2 className="bg-gradient-to-r from-[#DEB992] to-white text-transparent bg-clip-text font-black mt-4 text-xl" >Currently Working On</h2>
-        <ProjectCard image={portfolioP} color={"#DEB992"}></ProjectCard>
+        <ProjectCard image={portfolioP} color={"#DEB992"} />
         <p className={`text-white ${sarabun.class} mt-2 lg:text-lg`}>This portfolio page! Designed using Figma, and implemented using, next.js and tailwind.</p>
         <h2 className="bg-gradient-to-r from-[#DEB992] to-white text-transparent bg-clip-text font-black mt-4 text-xl" >Past Projects</h2>
         <ProjectCard image={realEstateP} color={"#000"} />
         <p className={`text-white ${sarabun.class} mt-2 lg:text-lg`}>Mock real estate website created using just html and css.</p>
+        <ProjectCard image={bookCampP} color={"#000"} />
+        <p className={`text-white ${sarabun.class} mt-2 lg:text-lg`}>Book Camp. A reading timer, paired with your very own reading buddy. Created with unity and submitted for the Bit Camp 2024 Hackathon.</p>
+
+
       </section>
     </main >
   );
